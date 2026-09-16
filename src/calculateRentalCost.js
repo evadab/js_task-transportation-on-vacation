@@ -6,13 +6,15 @@
 function calculateRentalCost(days) {
   const rentCarDayCost = 40;
   const longTermDiscount = 50;
+  const longTermMinDays = 7;
   const shortTermDiscount = 20;
+  const shortTermMinDays = 3;
 
-  if (days >= 7) {
+  if (days >= longTermMinDays) {
     return rentCarDayCost * days - longTermDiscount;
   }
 
-  if (days >= 3) {
+  if (days >= shortTermMinDays) {
     return rentCarDayCost * days - shortTermDiscount;
   }
 
